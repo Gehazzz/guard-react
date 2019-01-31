@@ -14,7 +14,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 public class CommunicationRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> updateLetterStatus(GuardDecider decider){
+    public RouterFunction<ServerResponse> decide(GuardDecider decider){
         return RouterFunctions.route(POST("/guard").and(contentType(APPLICATION_JSON)), decider::decide);
     }
 }
